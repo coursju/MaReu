@@ -1,8 +1,5 @@
 package com.example.mareu.models;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Reunion {
 
     private String participants;

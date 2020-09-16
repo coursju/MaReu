@@ -59,7 +59,5 @@ public class ManageReunionGeneratorTest {
                 .get("salle 1")
                 .removeReunion("19:00","reunion"));
         assertTrue(dayTest.get(todayTest).getRoomList().get("salle 1").getReunionList().get("09:00").getNom().contains("reunion"));
-
-
     }
 }

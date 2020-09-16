@@ -75,7 +75,6 @@ public class AddReunionActivity extends AppCompatActivity {
         spinnersListenersSetup();
         textListenersSetup();
         buttonsListenersSetup();
-
     }
 
     private void createSpinners(int ressource, Spinner spinner){

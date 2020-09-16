@@ -1,18 +1,15 @@
 package com.example.mareu.ui;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mareu.DI.DI;
 import com.example.mareu.R;
 import com.example.mareu.events.DeleteReunionEvent;
 
@@ -73,12 +70,10 @@ public class ReunionRecyclerViewAdapter extends RecyclerView.Adapter<ReunionRecy
             @Override
             public void onClick(View v) {
                 EventBus.getDefault().post(new DeleteReunionEvent(
-                //DI.service.removeReunion(
                         reunionContent.get(4),
                         reunionContent.get(2),
                         reunionContent.get(1),
                         reunionContent.get(0)
-
                 ));
             }
         });

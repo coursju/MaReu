@@ -83,8 +83,7 @@ public class ManageReunionApiService implements ReunionApiService {
     @Override
     public String addReunion(String date, String room, String hour, String reunionTime, String nomReunion, String participants) {
         //TODO verifier si le nom de la reunion existe deja a cette date dans cette salle
-        //TODO verifier si la reunion n empeite pas sur une autre
-        //attention si la date ou l entree n existe pas dans mDay (put)
+        //TODO verifier si la reunion n empiete pas sur une autre
         if (!mDay.containsKey(date))mDay.put(date,new TheDay());
         mDay.get(date).getRoomList().get(room).addReunion(hour, new Reunion(nomReunion, participants));
         return null;

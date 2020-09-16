@@ -34,7 +34,6 @@ public class ManageReunionApiServiceTest {
         assertNotNull(mService.getByRoom("salle 1",todayTest));
         assertTrue(mService.getByRoom("salle 1",todayTest).size()>=1);
         assertTrue(mService.getByRoom("salle 1",todayTest).get(0).get(0).contains("reunion"));
-
     }
 
     @Test

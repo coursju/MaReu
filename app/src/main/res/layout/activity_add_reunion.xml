@@ -3,22 +3,30 @@
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/enter_reunion_date"/>
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="@string/enter_reunion_date" />
     <Button
         android:id="@+id/date_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/select_room"/>
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="@string/select_room" />
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -27,35 +35,49 @@
             android:layout_height="wrap_content"
             android:id="@+id/room_selection"/>
     </ScrollView>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/select_room"/>
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="@string/select_room" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="horizontal">
+
         <ScrollView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
+
             <Spinner
+                android:id="@+id/hour_selection"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/hour_selection"/>
+                android:layout_height="wrap_content" />
         </ScrollView>
+
         <ScrollView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
+
             <Spinner
+                android:id="@+id/minute_selection"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/minute_selection"/>
+                android:layout_height="wrap_content" />
         </ScrollView>
     </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/enter_reunion_time"/>
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="@string/enter_reunion_time" />
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -64,29 +86,43 @@
             android:layout_height="wrap_content"
             android:id="@+id/reunion_time_selection"/>
     </ScrollView>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/enter_reunion_name"/>
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="@string/enter_reunion_name" />
+
     <EditText
         android:id="@+id/enter_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="nom de votre réunion"/>
+        android:gravity="center"
+        android:hint="nom de votre réunion" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/enter_reunion_participants"/>
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="@string/enter_reunion_participants" />
+
     <EditText
         android:id="@+id/enter_participants"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="nom@lamzone.com , nom@lamzone.com"/>
+        android:gravity="center"
+        android:hint="nom@lamzone.com , nom@lamzone.com" />
+
     <Button
         android:id="@+id/save_reunion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/save_this_reunion"/>
+        android:layout_marginTop="10dp"
+        android:text="@string/save_this_reunion" />
 
 </LinearLayout>
 </ScrollView>
