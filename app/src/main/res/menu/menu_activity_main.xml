@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_no_filter"
+        android:title="@string/no_filter">
+    </item>
+    <item
+        android:id="@+id/menu_date_filter"
+        android:title="@string/date_filter">
+    </item>
+    <item
+        android:id="@+id/menu_room_filter"
+        android:title="@string/room_filter">
+    </item>
+    <item
+        android:id="@+id/menu_hour_filter"
+        android:title="@string/hour_filter">
+    </item>
+</menu>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/item_reunion_color"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/ic_baseline_brightness_1_24"
+         />
+
+    <TextView
+        android:id="@+id/item_list_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/item_list_content"
+        app:layout_constraintStart_toEndOf="@+id/item_reunion_color"
+        app:layout_constraintTop_toTopOf="@+id/item_reunion_color"
+        app:layout_constraintEnd_toStartOf="@id/item_reunion_delete_button"
+        android:text="blablablabla"
+        android:textSize="16sp"
+        android:ellipsize="end"
+        android:singleLine="true"/>
+
+    <TextView
+        android:id="@+id/item_list_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/item_reunion_color"
+        app:layout_constraintStart_toEndOf="@+id/item_reunion_color"
+        app:layout_constraintTop_toBottomOf="@+id/item_list_title"
+        app:layout_constraintEnd_toStartOf="@id/item_reunion_delete_button"
+        android:singleLine="true"
+        android:text="testtesttest"
+        android:textSize="10sp"
+        android:ellipsize="end" />
+
+    <ImageButton
+        android:id="@+id/item_reunion_delete_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@null"
+        android:backgroundTint="#676565"
+        app:layout_constraintBottom_toBottomOf="@+id/item_list_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/item_list_title"
+        app:srcCompat="@drawable/ic_delete_white_24dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
