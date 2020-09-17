@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         this.todayDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
         this.date = todayDate;
         if (savedInstanceState != null){
+            this.date = savedInstanceState.getString("DATE");
             this.state = savedInstanceState.getString("STATE");
             this.mRoom = savedInstanceState.getString("ROOM");
             this.mHour = savedInstanceState.getString("HOUR");
@@ -211,6 +212,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putString("DATE", date);
         outState.putString("STATE", state);
         outState.putString("ROOM",mRoom);
         outState.putString("HOUR",mHour);
