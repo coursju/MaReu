@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private String todayDate;
     private String date;
     private ArrayList<ArrayList<String>> list;
-    private String state = "";
+    private String state = "date";
     private String mRoom;
     private String mHour;
 
@@ -58,7 +58,12 @@ public class MainActivity extends AppCompatActivity {
         this.recycler.addItemDecoration(new DividerItemDecoration( getApplicationContext(), DividerItemDecoration.VERTICAL));
         this.todayDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
         this.date = todayDate;
-        this.list = DI.service.getByDate(date);
+        if (savedInstanceState != null){
+            this.state = savedInstanceState.getString("STATE");
+            this.mRoom = savedInstanceState.getString("ROOM");
+            this.mHour = savedInstanceState.getString("HOUR");
+        }
+        checkState();
         initList();
     }
 
@@ -107,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
         this.recycler.setAdapter(new ReunionRecyclerViewAdapter(list));
         setTitle("Mareu        "+date);
     }
+
     @Override
     public void onResume() {
         super.onResume();
@@ -128,20 +134,7 @@ public class MainActivity extends AppCompatActivity {
     @Subscribe
     public void onDeleteReunion(DeleteReunionEvent event) {
         DI.service.removeReunion(event.date,event.room,event.hour,event.name);
-        switch (state){
-            case "date":
-                this.list = DI.service.getByDate(date);
-                break;
-            case "room":
-                this.list = DI.service.getByRoom(mRoom,date);
-                break;
-            case "hour":
-                this.list = DI.service.getByHour(mHour,date);
-                break;
-            default:
-                this.list = DI.service.getByDate(date);
-                break;
-        }
+        checkState();
         initList();
     }
 
@@ -182,6 +175,7 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog alert = builder.create();
         alert.show();
     }
+
     private void dialogHourConfig(){
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("Selectionner l' heure").setItems(R.array.complet_hour_array, new DialogInterface.OnClickListener() {
@@ -198,4 +192,28 @@ public class MainActivity extends AppCompatActivity {
         alert.show();
     }
 
+    private void checkState(){
+        switch (state){
+            case "date":
+                this.list = DI.service.getByDate(date);
+                break;
+            case "room":
+                this.list = DI.service.getByRoom(mRoom,date);
+                break;
+            case "hour":
+                this.list = DI.service.getByHour(mHour,date);
+                break;
+            default:
+                this.list = DI.service.getByDate(date);
+                break;
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        outState.putString("STATE", state);
+        outState.putString("ROOM",mRoom);
+        outState.putString("HOUR",mHour);
+        super.onSaveInstanceState(outState);
+    }
 }
