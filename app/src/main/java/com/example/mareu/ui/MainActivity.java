@@ -37,7 +37,7 @@ import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
     @BindView(R.id.reunion_recycler)
-        RecyclerView recycler;
+    RecyclerView recycler;
 
     private String todayDate;
     private String date;

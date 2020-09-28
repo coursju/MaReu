@@ -9,7 +9,9 @@ import java.util.Map;
 import java.util.Set;
 
 public class ManageReunionApiService implements ReunionApiService {
-
+    /**
+     * the model contening the reunions
+     */
     private Map<String,TheDay> mDay = ManageReunionGenerator.generatePlanning();
 
     @Override
@@ -82,8 +84,6 @@ public class ManageReunionApiService implements ReunionApiService {
 
     @Override
     public String addReunion(String date, String room, String hour, String reunionTime, String nomReunion, String participants) {
-        //TODO verifier si le nom de la reunion existe deja a cette date dans cette salle
-        //TODO verifier si la reunion n empiete pas sur une autre
         if (!mDay.containsKey(date))mDay.put(date,new TheDay());
         mDay.get(date).getRoomList().get(room).addReunion(hour, new Reunion(nomReunion, participants));
         return null;
@@ -98,7 +98,7 @@ public class ManageReunionApiService implements ReunionApiService {
 
     /**
      * Use for Unit Tests
-     * @return
+     * @return the model "mDay"
      */
     public Map<String,TheDay> getMDay(){
         return this.mDay;

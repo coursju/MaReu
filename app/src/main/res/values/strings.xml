@@ -12,6 +12,7 @@
     <string name="enter_reunion_hour">Veuillez sélectionner l heure de la réunion</string>
     <string name="enter_reunion_time">Veuillez sélectionner la durée de la réunion</string>
     <string name="save_this_reunion">Ajouter</string>
+    <string name="only_email">Veuillez entrez une adresse email svp</string>
     <string-array name="rooms_array">
         <item>salle 1</item>
         <item>salle 2</item>

@@ -11,19 +11,19 @@ public interface ReunionApiService {
 
     /**
      * getByDate
-     * @return
+     * @return a List filtered by date
      */
     ArrayList<ArrayList<String>> getByDate(String date);
 
     /**
      * getByRoom
-     * @return
+     * @return a List filtered by room
      */
     ArrayList<ArrayList<String>> getByRoom(String room, String date);
 
     /**
      * getByHour
-     * @return
+     * @return a List filtered by hour
      */
     ArrayList<ArrayList<String>> getByHour(String hour, String date);
 
@@ -47,7 +47,7 @@ public interface ReunionApiService {
 
     /**
      * use for tests
-     * @return
+     * @return the model
      */
     Map<String,TheDay> getMDay();
 }

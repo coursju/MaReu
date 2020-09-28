@@ -166,8 +166,10 @@ public class AddReunionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 DI.service.addReunion(date, room, hour, reunionTime, nomReunion, participants);
-                String str = date+" "+room+" "+hour+" "+reunionTime+" "+nomReunion+" "+participants+" ";
-                Toast.makeText(getApplicationContext(),str+": Ajouter",Toast.LENGTH_LONG).show();
+//                String str = date+" "+room+" "+hour+" "+reunionTime+" "+nomReunion+" "+participants+" ";
+//                Toast.makeText(getApplicationContext(),str+": Ajouter",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Bouton ajouter cliqué!",Toast.LENGTH_SHORT).show();
+
             }
         });
     }
@@ -203,7 +205,8 @@ public class AddReunionActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                participants = s.toString();
+                    participants = s.toString();
+                    Toast.makeText(getApplicationContext(),R.string.only_email, Toast.LENGTH_LONG).show();
             }
         });
     }
