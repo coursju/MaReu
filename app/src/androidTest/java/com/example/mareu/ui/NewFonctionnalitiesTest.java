@@ -47,6 +47,8 @@ public class NewFonctionnalitiesTest {
         onView(withId(R.id.hour_selection)).check(matches(withSpinnerText(containsString("10"))));
         onView(withId(R.id.enter_name)).perform(replaceText("abc"));
         onView(withId(R.id.enter_name)).check(matches(withText("abc")));
+        onView(withId(R.id.enter_participants)).perform(scrollTo(),replaceText("dj@lamzone.com"));
+        onView(withId(R.id.enter_participants)).check(matches(withText("dj@lamzone.com")));
         onView(withId(R.id.save_reunion)).perform(scrollTo(), click());
         pressBack();
         onView(allOf(withId(R.id.item_list_title), withText("abc"), isDisplayed()));

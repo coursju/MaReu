@@ -83,17 +83,15 @@ public class ManageReunionApiService implements ReunionApiService {
     }
 
     @Override
-    public String addReunion(String date, String room, String hour, String reunionTime, String nomReunion, String participants) {
+    public Boolean addReunion(String date, String room, String hour, String reunionTime, String nomReunion, String participants) {
         if (!mDay.containsKey(date))mDay.put(date,new TheDay());
-        mDay.get(date).getRoomList().get(room).addReunion(hour, new Reunion(nomReunion, participants));
-        return null;
+        return mDay.get(date).getRoomList().get(room).addReunion(hour, new Reunion(nomReunion, participants));
     }
 
     @Override
     public Boolean removeReunion(String date, String room, String hour, String name) {
         //TODO boucle pour enlever toute la durée de la reunion
-        mDay.get(date).getRoomList().get(room).removeReunion(hour, name);
-        return null;
+        return mDay.get(date).getRoomList().get(room).removeReunion(hour, name);
     }
 
     /**

@@ -1,10 +1,8 @@
 package com.example.mareu.services;
 
-import com.example.mareu.models.Reunion;
 import com.example.mareu.models.TheDay;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 public interface ReunionApiService {
@@ -32,16 +30,20 @@ public interface ReunionApiService {
      * @param date
      * @param room
      * @param hour
+     * @param reunionTime
      * @param nomReunion
      * @param participants
+     * @return boolean
      */
-    String addReunion(String date, String room, String hour, String reunionTime, String nomReunion, String participants);
+    Boolean addReunion(String date, String room, String hour, String reunionTime, String nomReunion, String participants);
 
     /**
      * removeReunion
      * @param date
      * @param room
      * @param hour
+     * @param name
+     * @return boolean
      */
     Boolean removeReunion(String date, String room, String hour, String name);
 

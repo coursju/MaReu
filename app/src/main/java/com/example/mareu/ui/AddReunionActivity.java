@@ -165,11 +165,16 @@ public class AddReunionActivity extends AppCompatActivity {
         saveReunion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DI.service.addReunion(date, room, hour, reunionTime, nomReunion, participants);
-//                String str = date+" "+room+" "+hour+" "+reunionTime+" "+nomReunion+" "+participants+" ";
-//                Toast.makeText(getApplicationContext(),str+": Ajouter",Toast.LENGTH_LONG).show();
-                Toast.makeText(getApplicationContext(),"Bouton ajouter cliqué!",Toast.LENGTH_SHORT).show();
-
+                if (participants.contains("@")) {
+                    if (DI.service.addReunion(date, room, hour, reunionTime, nomReunion, participants)) {
+                        String str = date + " " + room + " " + hour + " " + reunionTime + " " + nomReunion + " " + participants + " ";
+                        Toast.makeText(getApplicationContext(), str + ": Ajouter", Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), R.string.reunion_not_available, Toast.LENGTH_LONG).show();
+                    }
+                }else{
+                    Toast.makeText(getApplicationContext(),R.string.only_email, Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
@@ -200,13 +205,11 @@ public class AddReunionActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-
             }
 
             @Override
             public void afterTextChanged(Editable s) {
                     participants = s.toString();
-                    Toast.makeText(getApplicationContext(),R.string.only_email, Toast.LENGTH_LONG).show();
             }
         });
     }
